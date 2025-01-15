@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temprature converter</title>
+    <style>
+        h1{
+
+            text-align: center;
+            color: gold;
+        }
+        .main_subdiv{
+            /* text-align: center; */
+            width: 70vw;
+            height: 20vh;
+            background-color: goldenrod;
+            margin-left: 15vw;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            box-shadow:2px 2px 2px 5px rgb(220, 20, 37) ;
+        }
+        .main_subdiv1{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        
+        }
+        #input_celcius{
+           padding: 5px 55px 5px 0px;
+           margin: 5px;
+        }
+        #input_Fahrenheit{
+            padding: 5px 55px 5px 0px;
+           margin: 5px;
+        }
+        label{
+            font-size: 22px;
+        }
+        input{
+            font-size: 20px;
+            background-color: green;
+        }
+        body{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1> Temperatuer converter</h1>
+        <div class="main_subdiv">
+            <div class="main_subdiv1">
+            <label for="">Celcius</label>
+            <input type="text" name="" id="input_celcius" value="0">
+        </div>
+        <div class="main_subdiv1">
+            <label for="">Fahrenheit</label>
+            <input type="text" name="" id="input_Fahrenheit" value="32">
+        </div>
+    </div>
+
+
+    <!-- JAVASCRIPT CODE > -->
+
+    <script>
+        let Celcius =document.getElementById(`input_celcius`);
+        let Fahrenheit=document.getElementById(`input_Fahrenheit`);
+        Celcius.addEventListener(`input`,function(){
+            let c=this.value;
+            let f= (c * 9/5) + 32;
+            Fahrenheit.value = f;
+            
+
+        });
+
+
+
+        Fahrenheit.addEventListener(`input`,function(){
+            let f=this.value;
+            let c=(f - 32) * 5/9 ;
+            Celcius.value=c;
+
+
+        });
+        
+    </script>
+
+</body>
+</html>
